@@ -10,7 +10,7 @@ class Bola (private val numero: Int,
         fun generarBola(): Bola {
             var colores = Color.values()
             var colorAleatorio = colores[Random.nextInt(colores.size)]
-            contador ++
+            contador++
             return Bola(contador, colorAleatorio)
         }
     }
