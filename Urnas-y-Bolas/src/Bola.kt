@@ -15,6 +15,12 @@ class Bola (private val numero: Int,
         }
     }
 
+
+    val getColor: Color
+        get() {
+            return color
+        }
+
     override fun toString(): String {
         return "Bola(numero=$numero, color=$color)"
     }
