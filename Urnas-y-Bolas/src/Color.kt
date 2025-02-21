@@ -1,3 +1,3 @@
 enum class Color {
-    ROJO, VERDE, AZUL
+    ROJO, VERDE, AZUL, AMARILLO
 }

@@ -4,6 +4,8 @@ class Urna {
     private val capacidad: Int = 3
     private val urnaBolas = mutableListOf<Bola>()
 
+
+
     fun llenarUrna(bola:Bola, mutableList: MutableList<Bola>) {
             if(mutableList.size >= capacidad){
                 throw IllegalArgumentException("La Urna está llena")
@@ -24,7 +26,7 @@ class Urna {
             throw IllegalArgumentException("La Urna está vacia")
         }
     }
-// Saca una bola de un color determinado
+// Saca de la urna una bola de un color determinado
     fun sacarBolaColor(color: Color, mutableList: MutableList<Bola>) {
         val iterator = mutableList.iterator()  // Crea un iterador para recorrer la lista
         while (iterator.hasNext()) {
@@ -37,21 +39,39 @@ class Urna {
     }
 
 
-    fun estaVacia(mutableList: MutableList<Bola>) {
+
+    fun estaVacia(nombreUrna: String, mutableList: MutableList<Bola>) {
         if (mutableList.isEmpty()){
             throw IllegalArgumentException("La Urna $mutableList esta vacia")
         }else
-            mostrarUrna(mutableList)
+            mostrarUrna(nombreUrna,mutableList)
     }
 
 
-    fun mostrarUrna(mutableList: MutableList<Bola>){
+
+
+    fun agregaBolaColor(color: String, mutableList: MutableList<Bola>) {
+        var bola = Bola.generarBolaColor(color)
+        mutableList.add(bola)
+    }
+
+    fun agregaBolaAleatoria( mutableList: MutableList<Bola>) {
+        var bola = Bola.generarBola()
+        mutableList.add(bola)
+    }
+
+    fun numBolas(mutableList: MutableList<Bola>){
+        var num = mutableList.size
+        println("numBolas en la urna: $num")
+    }
+
+    fun mostrarUrna(nombreUrna: String, mutableList: MutableList<Bola>){
         if(!mutableList.isEmpty()){
             for(bola in mutableList){
-                println("En la urna quedan $bola")
+                println("En la urna $nombreUrna quedan $bola")
             }
         }else{
-            throw IllegalArgumentException("no se puede mostrar la urna $mutableList porque está vacía")
+            throw IllegalArgumentException("no se puede mostrar la urna $nombreUrna porque está vacía")
         }
     }
 
