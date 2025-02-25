@@ -49,7 +49,6 @@ class Urna {
 
 
 
-
     fun agregaBolaColor(color: String, mutableList: MutableList<Bola>) {
         var bola = Bola.generarBolaColor(color)
         mutableList.add(bola)

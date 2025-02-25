@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PMDM.iml" filepath="$PROJECT_DIR$/PMDM.iml" />
       <module fileurl="file://$PROJECT_DIR$/Urnas-y-Bolas/Urnas-y-Bolas.iml" filepath="$PROJECT_DIR$/Urnas-y-Bolas/Urnas-y-Bolas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Urnas-y-Bolas-Profe/Urnas-y-Bolas-Profe.iml" filepath="$PROJECT_DIR$/Urnas-y-Bolas-Profe/Urnas-y-Bolas-Profe.iml" />
     </modules>
   </component>
 </project>
