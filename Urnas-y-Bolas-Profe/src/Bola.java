@@ -1,3 +1,6 @@
+import org.fusesource.jansi.AnsiConsole;
+
+import static org.fusesource.jansi.Ansi.ansi;
 
 public class Bola
 {
@@ -46,4 +49,6 @@ public class Bola
     public String toString() {
         return ansi().fg(color.getColor()).a(BOLA).reset().toString();
     }
+
+
 }
