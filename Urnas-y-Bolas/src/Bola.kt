@@ -1,52 +1,44 @@
-import kotlin.random.Random
+import org.fusesource.jansi.Ansi
+import org.fusesource.jansi.AnsiConsole
 
-class Bola (private val numero: Int,
-            private val color: Color
-) {
-
+class Bola(private val color: Color) {
     companion object {
-        private var contador: Int = 0
+        private const val BOLA = '\u25CF'  // Representación textual
+        private var contador = 0           // Nº de bolas que existen
 
-        fun generarBola(): Bola {
-            var colores = Color.values()
-            var colorAleatorio = colores[Random.nextInt(colores.size)]
-            contador++
-            return Bola(contador, colorAleatorio)
+        // Método para generar una bola con un color aleatorio
+        fun generar(): Bola {
+            val colores = Color.values()
+            val n = (Math.random() * colores.size).toInt()
+            return Bola(colores[n])
         }
 
-        fun generarBolaColor(color:String): Bola {
-            contador++
-            when(color){
-            "azul" -> return Bola(contador, Color.AZUL)
-            "rojo" -> return Bola(contador, Color.ROJO)
-            "verde" -> return Bola(contador, Color.VERDE)
-            "amarillo" -> return Bola(contador, Color.AMARILLO)
-            else -> println("No ha y bolas de color $color")
-            }
-            return Bola(contador, Color.ROJO)
-        }
-
-        fun totalBolasCreadas(){
-            println("Se han creado un total de $contador bolas" )
+        // Método para obtener el total de bolas creadas
+        fun totalBolas(): Int {
+            return contador
         }
     }
 
+    val numero: Int
+    private val color: Color
 
-    val getColor: Color
-        get() {
-            return color
-        }
+    init {
+        numero = ++contador
+        this.color = color
+    }
 
-    val getNumber: Int
-        get() {
-            return numero
-        }
+    // Métodos de acceso
+    fun getColor(): Color {
+        return color
+    }
 
 
+    fun getNumero(): Int {
+        return numero
+    }
 
+    // Representación en texto de la bola con color
     override fun toString(): String {
-        return "Bola(numero=$numero, color=$color)"
+        return Ansi.ansi().fg(color.getColor()).a(BOLA).reset().toString()
     }
-
-
 }
