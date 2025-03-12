@@ -20,5 +20,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="jansi-2.4.0" level="application" />
   </component>
 </module>
