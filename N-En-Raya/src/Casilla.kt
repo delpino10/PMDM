@@ -1,4 +1,4 @@
-class Casilla (private var ficha : Ficha?) {
+data class Casilla (private var ficha : Ficha) {
 
     fun estaVacia() : Boolean{
         return ficha == null
