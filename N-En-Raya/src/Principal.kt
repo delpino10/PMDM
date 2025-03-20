@@ -1,5 +1,0 @@
-class Principal {
-    fun main(){
-
-    }
-}
