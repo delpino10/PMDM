@@ -1,11 +1,11 @@
-class Animal ( nombre: String ){
+open class Animal ( nombre: String ){
 
     companion object{
         private var contador :Int = 0
     }
 
-    private var nombre :String = ""
-    private val numero :Int
+    var nombre :String = ""
+    val numero :Int
 
     init {
         require(nombre.isNotEmpty()){ "El nombre de un animal no puede estar vacío"}
@@ -15,7 +15,7 @@ class Animal ( nombre: String ){
     }
 
     override fun toString(): String {
-        return "Animal(nombre='$nombre', numero=$numero)"
+        return "(nombre='$nombre', numero=$numero)"
     }
 
 
